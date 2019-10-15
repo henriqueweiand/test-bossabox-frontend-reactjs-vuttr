@@ -1,48 +1,19 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
+
+import './config/ReactotronConfig';
+
+import Routes from './routes';
+import history from './services/history';
 
 import GlobalStyle from './styles/global';
 
-const data = [
-  {
-    title: 'titulo da noticia',
-    descriiption: 'descriçao da noticia',
-    tags: [
-      'node', 'react', 'php'
-    ]
-  },
-  {
-    title: 'titulo da noticia2',
-    descriiption: 'descriçao da noticia',
-    tags: [
-      'node', 'react', 'php'
-    ]
-  },
-]
-
 function App() {
   return (
-    <>
+    <Router history={history}>
+      <Routes />
       <GlobalStyle />
-      <h1>VUTTR</h1>
-      <h2>Very Useful Tools to Remember</h2>
-      <div>
-        <span>Search</span>
-        <span>search in tags only</span>
-        <span>+ Add</span>
-      </div>
-      <div>
-        {
-          data.map(item => (
-            <section>
-              <h2>{item.title}</h2>
-              <div>{item.descriiption}</div>
-              <div>{item.tags.map(tag => <span>{tag}</span>)}</div>
-              <div>X remove</div>
-            </section>
-          ))
-        }
-      </div>
-    </>
+    </Router>
   );
 }
 
