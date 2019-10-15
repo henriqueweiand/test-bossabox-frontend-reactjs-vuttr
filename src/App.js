@@ -1,25 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+const data = [
+  {
+    title: 'titulo da noticia',
+    descriiption: 'descriçao da noticia',
+    tags: [
+      'node', 'react', 'php'
+    ]
+  },
+  {
+    title: 'titulo da noticia2',
+    descriiption: 'descriçao da noticia',
+    tags: [
+      'node', 'react', 'php'
+    ]
+  },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>VUTTR</h1>
+      <h2>Very Useful Tools to Remember</h2>
+      <div>
+        <span>Search</span>
+        <span>search in tags only</span>
+        <span>+ Add</span>
+      </div>
+      <div>
+        {
+          data.map(item => (
+            <>
+              <div>{item.title}</div>
+              <div>{item.descriiption}</div>
+              <div>{item.tags.map(tag => <span>{tag}</span>)}</div>
+              <div>X remove</div>
+            </>
+          ))
+        }
+      </div>
+    </>
   );
 }
 
