@@ -34,5 +34,9 @@ export const Tool = styled.div`
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
+
+  label + label {
+    padding-left: 10px;
+  }
 `;
 

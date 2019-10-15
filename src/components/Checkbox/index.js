@@ -1,12 +1,18 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Input } from './styles';
 
 export default function Checkbox({children, text}) {
   return (
     <Container for="checkbox">
-      <input id="checkbox" type="checkbox" />
-      {text}
+      <Input id="checkbox" type="checkbox" />
+      {
+        !!text && (
+          <span>
+            {text}
+          </span>
+        )
+      }
     </Container>
   );
 }
