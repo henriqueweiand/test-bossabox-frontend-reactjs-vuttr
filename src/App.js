@@ -1,5 +1,7 @@
 import React from 'react';
 
+import GlobalStyle from './styles/global';
+
 const data = [
   {
     title: 'titulo da noticia',
@@ -20,6 +22,7 @@ const data = [
 function App() {
   return (
     <>
+      <GlobalStyle />
       <h1>VUTTR</h1>
       <h2>Very Useful Tools to Remember</h2>
       <div>
@@ -30,12 +33,12 @@ function App() {
       <div>
         {
           data.map(item => (
-            <>
-              <div>{item.title}</div>
+            <section>
+              <h2>{item.title}</h2>
               <div>{item.descriiption}</div>
               <div>{item.tags.map(tag => <span>{tag}</span>)}</div>
               <div>X remove</div>
-            </>
+            </section>
           ))
         }
       </div>
