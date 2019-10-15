@@ -34,7 +34,7 @@ export default function Main({ children }) {
     <Container>
 
       <Heading>
-        <Title size="3rem">VUTTR</Title>
+        <Title size="4rem">VUTTR</Title>
         <Subtitle>Very Useful Tools to Remember</Subtitle>
       </Heading>
 
@@ -46,9 +46,11 @@ export default function Main({ children }) {
         <Button icon={<MdAdd />} border text="Add" />
       </Tools>
 
-      {
-        data.map(item => <News data={item} />)
-      }
+      <div className="news">
+        {
+          data.map(item => <News data={item} />)
+        }
+      </div>
     </Container>
   );
 }

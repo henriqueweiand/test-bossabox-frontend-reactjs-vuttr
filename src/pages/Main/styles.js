@@ -5,11 +5,18 @@ export const Container = styled.div`
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 3rem;
+
+  div.news section {
+    margin-top: 2rem;
+  }
 `;
 
 export const Heading = styled.div`
   padding: 2rem 0;
-  line-height: 3rem;
+
+  h1 + h2 {
+    margin-top: 1rem;
+  }
 `;
 
 export const Tools = styled.div`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.a`
-  font-size: 1.5em;
+  font-size: 2rem;
   text-decoration: underline;
 `;
 
@@ -26,7 +26,6 @@ export const Container = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    margin-bottom: 5px;
   }
 
   div.tags {
@@ -38,9 +37,11 @@ export const Container = styled.div`
   }
 `;
 
-export const Description = styled.div``;
+export const Description = styled.div`
+  font-size: 1.5rem;
+`;
 
 export const Tag = styled.span`
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1.5rem;
 `;

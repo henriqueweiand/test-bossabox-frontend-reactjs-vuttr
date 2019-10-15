@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {IoIosClose} from "react-icons/io";
+import {MdClose} from "react-icons/md";
 import Button from '~/components/Button';
 
 import { Container, Title, Description, Tag } from './styles';
@@ -10,7 +10,7 @@ export default function News({children, data}) {
     <Container as="section" elevation>
       <div className="header">
         <Title href="#">{data.title}</Title>
-        <Button text="Remove" icon={<IoIosClose />} />
+        <Button text="Remove" icon={<MdClose />} />
       </div>
       <Description>{data.descriiption}</Description>
       <div className="tags">{data.tags.map(tag => <Tag>#{tag}</Tag>)}</div>

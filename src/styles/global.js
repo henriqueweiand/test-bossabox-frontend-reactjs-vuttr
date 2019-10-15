@@ -13,20 +13,27 @@ export default createGlobalStyle`
   }
   html, body, #root {
     height: 100%;
+    font-size: 62.5%;
   }
   body {
     -webkit-font-smoothing: antialiased;
   }
   body, input, button {
-    font: 14px 'Roboto', sans-serif;
-  }
-  a {
-    text-decoration: none;
-  }
-  ul {
-    list-style: none;
+    font: 1.6rem 'Roboto', sans-serif;
   }
   button {
     cursor: pointer;
+  }
+
+  @media (max-width: 1080px) {
+    html {
+      font-size: 58%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    html {
+      font-size: 54%;
+    }
   }
 `;
