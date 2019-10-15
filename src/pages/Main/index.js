@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Title from '~/components/Title';
+import News from '~/components/News';
 import Subtitle from '~/components/Subtitle';
 import SearchIput from '~/components/SearchIput';
 import Button from '~/components/Button';
@@ -37,20 +38,13 @@ export default function Main({ children }) {
       <Tools>
         <Tool>
           <SearchIput />
-          <Checkbox />
+          <Checkbox text="search in tags only" />
         </Tool>
         <Button text="Add" icon="add" />
       </Tools>
 
       {
-        data.map(item => (
-          <section>
-            <h2>{item.title}</h2>
-            <div>{item.descriiption}</div>
-            <div>{item.tags.map(tag => <span>{tag}</span>)}</div>
-            <div>X remove</div>
-          </section>
-        ))
+        data.map(item => <News data={item} />)
       }
     </Container>
   );
