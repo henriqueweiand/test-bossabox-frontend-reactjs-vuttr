@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Title({children, text}) {
+export default function Button({text, icon = false, ...rest}) {
   return (
-    <Container>
+    <Container {...rest}>
+      {icon}
       {text}
     </Container>
   );

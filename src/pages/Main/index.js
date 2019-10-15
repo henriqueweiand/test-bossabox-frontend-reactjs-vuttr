@@ -1,11 +1,14 @@
 import React from 'react';
 
+import {MdAdd} from "react-icons/md";
+
 import Title from '~/components/Title';
 import News from '~/components/News';
 import Subtitle from '~/components/Subtitle';
 import SearchIput from '~/components/SearchIput';
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
+import Modal from '~/components/Modal';
 
 import { Container, Heading, Tools, Tool } from './styles';
 
@@ -40,7 +43,7 @@ export default function Main({ children }) {
           <SearchIput />
           <Checkbox text="search in tags only" />
         </Tool>
-        <Button text="Add" icon="add" />
+        <Button icon={<MdAdd />} border text="Add" />
       </Tools>
 
       {
