@@ -17,6 +17,7 @@ import { Creators as ToolsActions } from '../../store/ducks/tools';
 import { Container, Heading, Tools, Tool } from './styles';
 
 export default function Main({ children }) {
+  const [tool, setTool] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
   const [modalRemove, setModalRemove] = useState(false);
   const tools = useSelector(state => state.tools.data);
@@ -30,8 +31,9 @@ export default function Main({ children }) {
     setModalCreate(true);
   }
 
-  function handleRemove() {
-    setModalRemove(true);
+  function handleRemove(tool) {
+    dispatch(ToolsActions.removeToolRequest(tool.id));
+    setModalRemove(false);
   }
 
   return (
@@ -44,13 +46,17 @@ export default function Main({ children }) {
         />
       )}
 
-      { !!modalRemove && (
+      { !!modalRemove && !!tool ? (
         <ModalRemove
-          onClose={setModalRemove}
+          data={tool}
+          onClose={() => {
+            setTool(false);
+            setModalRemove(false);
+          }}
           onRemove={handleRemove}
           open={modalRemove}
         />
-      )}
+      ) : ``}
 
       <Heading>
         <Title size="4rem">VUTTR</Title>
@@ -69,7 +75,10 @@ export default function Main({ children }) {
         {
           tools.map(item =>
             <News
-              toogleModal={setModalRemove}
+              toogleModal={(tool) => {
+                setTool(tool);
+                setModalRemove(true);
+              }}
               key={item.id}
               data={item}
             />

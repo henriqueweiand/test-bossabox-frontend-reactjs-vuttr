@@ -10,7 +10,7 @@ export default function News({children, toogleModal, data}) {
     <Container as="section" elevation="true">
       <div className="header">
         <Title href={data.link} target="_blank">{data.title}</Title>
-        <Button text="Remove" icon={<MdClose />} onClick={() => toogleModal(true)} />
+        <Button text="Remove" icon={<MdClose />} onClick={() => toogleModal(data)} />
       </div>
       {
         data.description && <Description>{data.description}</Description>
