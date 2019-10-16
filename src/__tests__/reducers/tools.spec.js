@@ -1,4 +1,4 @@
-import toolsReducer, { Creators as ToolsActions } from '../../store/ducks/tools';
+import toolsReducer, { Creators as ToolsActions } from '~/store/ducks/tools';
 
 describe('Tools Reducer', () => {
   it('should be able to add tools', () => {

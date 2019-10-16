@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { Creators as ToolsActions } from '../../store/ducks/tools';
@@ -36,3 +37,12 @@ export default function SearchInput({tagsOnly, onChange}) {
     </Container>
   );
 }
+
+SearchInput.defaultProps = {
+  tagsOnly: false
+};
+
+SearchInput.propTypes = {
+  tagsOnly: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+};

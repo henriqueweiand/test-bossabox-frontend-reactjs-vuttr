@@ -1,5 +1,5 @@
 import { runSaga } from 'redux-saga';
-import api from '../../services/api';
+import api from '~/services/api';
 import MockAdapter from 'axios-mock-adapter';
 
 import {
@@ -7,8 +7,8 @@ import {
   getByTagRequest,
   addToolRequest,
   removeToolRequest,
-} from '../../store/sagas/tools';
-import { Creators as ToolsActions } from '../../store/ducks/tools';
+} from '~/store/sagas/tools';
+import { Creators as ToolsActions } from '~/store/ducks/tools';
 
 const getAllResponseData = [
   {

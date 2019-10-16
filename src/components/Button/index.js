@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
-export default function Button({text, icon = false, ...rest}) {
+export default function Button({text, icon, ...rest}) {
   return (
     <Container {...rest}>
       {icon}
@@ -10,3 +11,15 @@ export default function Button({text, icon = false, ...rest}) {
     </Container>
   );
 }
+
+Button.defaultProps = {
+  icon: false
+};
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+};

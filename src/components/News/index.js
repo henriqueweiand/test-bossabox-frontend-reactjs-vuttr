@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {MdClose} from "react-icons/md";
 import Button from '~/components/Button';
@@ -26,3 +27,18 @@ export default function News({children, toogleModal, data, search}) {
     </Container>
   );
 }
+
+News.defaultProps = {
+  display: false
+};
+
+News.propTypes = {
+  toogleModal: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    link: PropTypes.string,
+    description: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  search: PropTypes.string,
+};

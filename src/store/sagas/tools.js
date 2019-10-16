@@ -73,6 +73,7 @@ export function* removeToolRequest(action) {
 
     if (response !== null && response.status === 200) {
       yield put(ToolsActions.removeToolSuccess());
+      yield put(ToolsActions.getAllRequest());
     } else {
       yield put(ToolsActions.removeToolError('There was an error trying to delete the tool.'));
     }

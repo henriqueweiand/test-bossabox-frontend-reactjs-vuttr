@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
-import Welcome from '../../pages/welcome';
+import Main from '~/pages/Main';
 
 const initialState = {
   tools: {
@@ -31,25 +31,25 @@ const mockStore = configureStore();
 let wrapper;
 let store;
 
-describe('Welcome Component', () => {
+describe('Main Component', () => {
   beforeEach(() => {
     // creates the store with any initial state or middleware needed
     store = mockStore(initialState);
     wrapper = mount(
       <Provider store={store}>
-        <Welcome />
+        <Main />
       </Provider>,
     );
   });
 
   it('should render main form', () => {
-    expect(wrapper.find('form').exists()).toBe(true);
-    expect(wrapper.find('input.form-control').exists()).toBe(true);
-    expect(wrapper.find('input.form-check-input').exists()).toBe(true);
+    expect(wrapper.find('input#input-search').exists()).toBe(true);
+    expect(wrapper.find('div.header').exists()).toBe(true);
     expect(wrapper.find('button').exists()).toBe(true);
+    expect(wrapper.find('div.news').exists()).toBe(true);
   });
 
   it("should render the tools' list", () => {
-    expect(wrapper.find('.card').length).toBe(1);
+    expect(wrapper.find('.news section').length).toBe(1);
   });
 });
