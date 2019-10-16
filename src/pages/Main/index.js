@@ -38,6 +38,10 @@ export default function Main({ children }) {
     setModalCreate(true);
   }
 
+  function handleRemove() {
+    setModalRemove(true);
+  }
+
   return (
     <Container>
       { !!modalCreate && <ModalCreate onClose={setModalCreate} open={modalCreate} />}
@@ -58,7 +62,7 @@ export default function Main({ children }) {
 
       <div className="news">
         {
-          data.map(item => <News key={Math.floor(Math.random() * 10)} data={item} />)
+          data.map(item => <News onRemove={handleRemove} key={Math.floor(Math.random() * 10)} data={item} />)
         }
       </div>
     </Container>
