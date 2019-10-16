@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {MdAdd} from "react-icons/md";
 
@@ -11,28 +12,19 @@ import Checkbox from '~/components/Checkbox';
 import ModalCreate from '~/pages/Main/components/Create';
 import ModalRemove from '~/pages/Main/components/Remove';
 
-import { Container, Heading, Tools, Tool } from './styles';
+import { Creators as ToolsActions } from '../../store/ducks/tools';
 
-const data = [
-  {
-    title: 'titulo da noticia',
-    descriiption: 'descriçao da noticia',
-    tags: [
-      'node', 'react', 'php'
-    ]
-  },
-  {
-    title: 'titulo da noticia2',
-    descriiption: 'descriçao da noticia',
-    tags: [
-      'node', 'react', 'php'
-    ]
-  },
-]
+import { Container, Heading, Tools, Tool } from './styles';
 
 export default function Main({ children }) {
   const [modalCreate, setModalCreate] = useState(false);
   const [modalRemove, setModalRemove] = useState(false);
+  const tools = useSelector(state => state.tools.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(ToolsActions.getAllRequest());
+  }, [dispatch]);
 
   function handleAdd() {
     setModalCreate(true);
@@ -44,8 +36,21 @@ export default function Main({ children }) {
 
   return (
     <Container>
-      { !!modalCreate && <ModalCreate onClose={setModalCreate} open={modalCreate} />}
-      { !!modalRemove && <ModalRemove onClose={setModalRemove} open={modalRemove} />}
+      { !!modalCreate && (
+        <ModalCreate
+          onClose={setModalCreate}
+          onSave={handleAdd}
+          open={modalCreate}
+        />
+      )}
+
+      { !!modalRemove && (
+        <ModalRemove
+          onClose={setModalRemove}
+          onRemove={handleRemove}
+          open={modalRemove}
+        />
+      )}
 
       <Heading>
         <Title size="4rem">VUTTR</Title>
@@ -57,12 +62,18 @@ export default function Main({ children }) {
           <SearchIput />
           <Checkbox text="search in tags only" />
         </Tool>
-        <Button onClick={handleAdd} icon={<MdAdd />} border text="Add" />
+        <Button onClick={setModalCreate} icon={<MdAdd />} border text="Add" />
       </Tools>
 
       <div className="news">
         {
-          data.map(item => <News onRemove={handleRemove} key={Math.floor(Math.random() * 10)} data={item} />)
+          tools.map(item =>
+            <News
+              toogleModal={setModalRemove}
+              key={item.id}
+              data={item}
+            />
+          )
         }
       </div>
     </Container>

@@ -19,7 +19,7 @@ export default function Remove({open, ...rest}) {
 
         <Footer>
           <Button border onClick={() => rest.onClose(false)} text="Cancel" />
-          <Button border text="Yes, remove" />
+          <Button border onClick={() => rest.onRemove()} text="Yes, remove" />
         </Footer>
       </Container>
     </Modal>
