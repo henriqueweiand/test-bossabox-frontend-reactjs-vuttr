@@ -17,6 +17,8 @@ import { Creators as ToolsActions } from '../../store/ducks/tools';
 import { Container, Heading, Tools, Tool } from './styles';
 
 export default function Main({ children }) {
+  const [search, setSearch] = useState('');
+  const [tagsOnly, setTagsOnly] = useState(false);
   const [tool, setTool] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
   const [modalRemove, setModalRemove] = useState(false);
@@ -66,8 +68,8 @@ export default function Main({ children }) {
 
       <Tools>
         <Tool>
-          <SearchIput />
-          <Checkbox text="search in tags only" />
+          <SearchIput tagsOnly={tagsOnly} onChange={setSearch} />
+          <Checkbox onChange={setTagsOnly} text="search in tags only" />
         </Tool>
         <Button onClick={setModalCreate} icon={<MdAdd />} border text="Add" />
       </Tools>
@@ -82,6 +84,7 @@ export default function Main({ children }) {
               }}
               key={item.id}
               data={item}
+              search={search}
             />
           )
         }

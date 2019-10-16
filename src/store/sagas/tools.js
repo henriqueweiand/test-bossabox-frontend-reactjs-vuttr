@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
-import api from '../../services/api';
+import api from '~/services/api';
 
-import { Creators as ToolsActions } from '../ducks/tools';
+import { Creators as ToolsActions } from '~/store/ducks/tools';
 
 export function* getAllRequest(action) {
   try {
@@ -38,9 +38,6 @@ export function* getByTagRequest(action) {
       yield put(ToolsActions.getAllError('There was an error trying to get the tools by a tag.'));
     }
   } catch (error) {
-    console.log(1111);
-    console.log(error);
-    console.log(2222);
     yield put(ToolsActions.getAllError('There was an error trying to get the tools by a tag.'));
   }
 }

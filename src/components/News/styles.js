@@ -44,4 +44,5 @@ export const Description = styled.div`
 export const Tag = styled.span`
   font-weight: bold;
   font-size: 1.5rem;
+  background: ${props => props.highlight ? 'yellow' : 'none'}
 `;

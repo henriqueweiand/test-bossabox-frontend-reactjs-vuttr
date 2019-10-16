@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Container, Input, Label } from './styles';
+import { Container, Input as InputStyle, Label } from './styles';
 
-export default function Title({label, name, height, as = 'input', onChange}) {
+export default function Input({label, name, height, as = 'input', onChange}) {
   return (
     <Container htmlFor={`input-${name}`}>
       {label && <Label>{label}</Label>}
-      <Input
+      <InputStyle
         name={name}
         onChange={onChange}
         height={height}

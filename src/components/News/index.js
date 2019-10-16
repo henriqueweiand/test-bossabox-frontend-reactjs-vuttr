@@ -5,7 +5,7 @@ import Button from '~/components/Button';
 
 import { Container, Title, Description, Tag } from './styles';
 
-export default function News({children, toogleModal, data}) {
+export default function News({children, toogleModal, data, search}) {
   return (
     <Container as="section" elevation="true">
       <div className="header">
@@ -15,7 +15,14 @@ export default function News({children, toogleModal, data}) {
       {
         data.description && <Description>{data.description}</Description>
       }
-      <div className="tags">{data.tags.map(tag => <Tag key={tag}>#{tag}</Tag>)}</div>
+      <div className="tags">
+        {data.tags.map(tag => (
+          <Tag key={tag} highlight={search === tag}>
+            #{tag}
+          </Tag>
+          )
+        )}
+      </div>
     </Container>
   );
 }
