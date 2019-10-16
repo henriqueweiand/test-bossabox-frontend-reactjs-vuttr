@@ -27,7 +27,8 @@ export default function Main({ children }) {
     dispatch(ToolsActions.getAllRequest());
   }, [dispatch]);
 
-  function handleAdd() {
+  function handleAdd(form) {
+    console.log(form);
     setModalCreate(true);
   }
 
