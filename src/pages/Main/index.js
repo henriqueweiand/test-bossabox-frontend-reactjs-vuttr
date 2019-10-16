@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {MdAdd} from "react-icons/md";
 
@@ -8,7 +8,8 @@ import Subtitle from '~/components/Subtitle';
 import SearchIput from '~/components/SearchIput';
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
-import Modal from '~/components/Modal';
+import ModalCreate from '~/pages/Main/components/Create';
+import ModalRemove from '~/pages/Main/components/Remove';
 
 import { Container, Heading, Tools, Tool } from './styles';
 
@@ -30,8 +31,17 @@ const data = [
 ]
 
 export default function Main({ children }) {
+  const [modalCreate, setModalCreate] = useState(false);
+  const [modalRemove, setModalRemove] = useState(false);
+
+  function handleAdd() {
+    setModalCreate(true);
+  }
+
   return (
     <Container>
+      { !!modalCreate && <ModalCreate onClose={setModalCreate} open={modalCreate} />}
+      { !!modalRemove && <ModalRemove onClose={setModalRemove} open={modalRemove} />}
 
       <Heading>
         <Title size="4rem">VUTTR</Title>
@@ -43,12 +53,12 @@ export default function Main({ children }) {
           <SearchIput />
           <Checkbox text="search in tags only" />
         </Tool>
-        <Button icon={<MdAdd />} border text="Add" />
+        <Button onClick={handleAdd} icon={<MdAdd />} border text="Add" />
       </Tools>
 
       <div className="news">
         {
-          data.map(item => <News data={item} />)
+          data.map(item => <News key={Math.floor(Math.random() * 10)} data={item} />)
         }
       </div>
     </Container>

@@ -11,7 +11,7 @@ export const Container = styled.div`
   border-radius: 5px;
 
   ${(props) => {
-    return props.elevation && `
+    return !!props.elevation && `
       -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
       transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
