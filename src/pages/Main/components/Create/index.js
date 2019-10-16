@@ -32,7 +32,7 @@ export default function Create({open, ...rest}) {
 
         <Body>
 
-          <Input label="Tool name" value="" name="name" onChange={onChange} />
+          <Input label="Tool title" value="" name="title" onChange={onChange} />
           <Input label="Tool Link" value="" name="link" onChange={onChange} />
           <Input
             height="10rem"

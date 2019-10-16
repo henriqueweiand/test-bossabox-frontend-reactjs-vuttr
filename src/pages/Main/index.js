@@ -28,8 +28,8 @@ export default function Main({ children }) {
   }, [dispatch]);
 
   function handleAdd(form) {
-    console.log(form);
-    setModalCreate(true);
+    dispatch(ToolsActions.addToolRequest(form));
+    setModalCreate(false);
   }
 
   function handleRemove(tool) {
