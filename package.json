@@ -15,7 +15,8 @@
     "redux": "^4.0.4",
     "redux-persist": "^5.10.0",
     "redux-saga": "^1.0.5",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.17.0",
