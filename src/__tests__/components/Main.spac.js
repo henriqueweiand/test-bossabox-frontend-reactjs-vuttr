@@ -3,7 +3,12 @@ import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
 import Main from '~/pages/Main';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 const initialState = {
   tools: {
