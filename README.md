@@ -2,6 +2,8 @@
 
 <p><img src="https://github.com/henriqueweiand/test-bossabox-frontend-reactjs-vuttr/workflows/React%20Workflow/badge.svg"></p>
 
+![alt text](https://media.giphy.com/media/WUljsBkNQAnycDqT0C/giphy.gif)
+
 ## Proposta
 
 Sua tarefa é construir um front-end para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags. Utilize um repositório Git (público, de preferência) para versionamento e disponibilização do código.
