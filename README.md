@@ -38,7 +38,7 @@ Os pontos em negrito se destacam como características para se tornar **Tech Lea
 
 ### Explicacao projeto
 
-VIDEO EM BREVE
+https://youtu.be/bR4wdiiKIf0
 
 ## Requisitos
 
