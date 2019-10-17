@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# test-bossabox-frontend-reactjs-vuttr
 
-## Available Scripts
+<p><img src="https://github.com/henriqueweiand/test-bossabox-frontend-reactjs-vuttr/workflows/React%20Workflow/badge.svg"></p>
 
-In the project directory, you can run:
+## Proposta
 
-### `yarn start`
+Sua tarefa é construir um front-end para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags. Utilize um repositório Git (público, de preferência) para versionamento e disponibilização do código.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O front-end deve ser construído utilizando qualquer framework JavaScript de sua preferência (React, Vue.js, Angular, etc...), utilizando [este style guide](https://xd.adobe.com/spec/6a82c840-1813-4b23-6919-2ac91409d104-1cb3/) e seguindo os wireframes apresentados abaixo.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## O que será avaliado
 
-### `yarn test`
+Queremos avaliar sua capacidade de desenvolver e documentar um front-end para uma aplicação com back-end pronto. Serão avaliados:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Código bem escrito e limpo;
+- Quais ferramentas foram usadas, como e por quê;
+- Seu conhecimento em JavaScript, HTML e CSS;
+- Sua capacidade de se comprometer com o que foi fornecido (wireframe, styleguide);
+- Sua capacidade de documentação da sua parte da aplicação.
 
-### `yarn build`
+## O mínimo necessário
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As telas seguindo os wireframes a seguir e utilizando a API disponibilizada ao fim deste documento;
+- [README.md](http://readme.md) contendo informações básicas do projeto e como executá-lo.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Bônus
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Os pontos em negrito se destacam como características para se tornar **Tech Lead** em squads.
 
-### `yarn eject`
+- Testes de front-end;
+- Uso de ferramentas externas que facilitem o seu trabalho;
+- Cuidados especiais com otimização, SEO, entre outros;
+- **Deploy da aplicação utilizando ferramentas externas (Netlify, Surge, S3, Firebase, etc)**;
+- **Pipeline de deploy contínuo**
+- Sugestões sobre o challenge embasadas em alguma argumentação.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Explicacao projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+VIDEO EM BREVE
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Requisitos
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Visite: https://www.notion.so/Dev-Front-End-7e048c1d54274a15b26e50f2a4d52d6c
 
-## Learn More
+## Dependências
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- node
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Instruções para rodar
 
-### Code Splitting
+1) Na pasta do projeto após ser feito o clone, rode `npm install` para baixar as dependencias.
+2) Execute `npm run start` para o projeto rodar.
+3) Caso seu fake server rode em uma porta que não seja a 3001, altere no arquivo `/src/services/api.js`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Material complementar
 
-### Analyzing the Bundle Size
+A documentação dos endpoints pode ser acessada em https://app.swaggerhub.com/apis/henriqueweiand/test-bossabox-backend-php-vuttr/1.0.0
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Importante
 
-### Making a Progressive Web App
+Este projeto foi implementado utilizando umservidor fake, para rodar  basta subir o mesmo na porta 3001, o código dele pode ser baixado em https://gitlab.com/bossabox/challenge-fake-api/tree/master
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Tests
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Na pasta do projeto rode `npm run test`
