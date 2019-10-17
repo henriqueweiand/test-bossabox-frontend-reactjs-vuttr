@@ -22,9 +22,13 @@ export const Modal = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 0.4s;
-  top: 20%;
+  top: 10%;
 
   @media (max-width: 1080px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1080px) {
     width: 60%;
   }
 
@@ -34,6 +38,6 @@ export const Modal = styled.div`
 
   @keyframes animatetop {
     from {top: -300px; opacity: 0}
-    to {top: 20%; opacity: 1}
+    to {top: 10%; opacity: 1}
   }
 `;
